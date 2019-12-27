@@ -17,34 +17,42 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Producto</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Producto" target="myFrame">Producto</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Empleados</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Empleado" target="myFrame">Empleados</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Clientes</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Clientes" target="myFrame">Clientes</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Nueva venta</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=RegistrarVenta" target="myFrame">Nueva venta</a>
                     </li>
                 </ul>
             </div>
-            <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown button
+            <div class="dropdown" style="margin-right: 100px">
+                <button style="border: none" class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ${usuario.getNom()}
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" alt="60" width="60"/>
+                        </a>
+                      <a class="dropdown-item" href="#">${usuario.getUser()}</a>
+                      <a class="dropdown-item" href="#">rome.1205h@gmail.com</a>
+                      <div class="dropdown-divider"></div>
+                      <form action="Validar" method="POST">
+                          <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+                      </form>
                     </div>
             </div>
         </nav>
-         
+                      <div class="m-4" style="height: 550px;">
+            <iframe name="myFrame" style="height: 100%; width: 100%"></iframe>
+        </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
