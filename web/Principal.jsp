@@ -20,16 +20,16 @@
                       <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Producto" target="myFrame">Producto</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Producto" target="myFrame">Producto</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Empleado" target="myFrame">Empleados</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Empleado" target="myFrame">Empleados</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Clientes" target="myFrame">Clientes</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=Clientes" target="myFrame">Clientes</a>
                     </li>
                     <li class="nav-item">
-                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=RegistrarVenta" target="myFrame">Nueva venta</a>
+                      <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?menu=RegistrarVenta" target="myFrame">Nueva venta</a>
                     </li>
                 </ul>
             </div>
