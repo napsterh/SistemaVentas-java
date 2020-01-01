@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import Config.Conexion;
@@ -8,12 +7,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class EmpleadoDAO {
     Conexion cn=new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
+    int r;
     
     public  Empleado validar(String user, String dni){
         Empleado em=new Empleado();
@@ -58,16 +57,65 @@ public class EmpleadoDAO {
         return lista;
     }
     
-    public int agregar(){
-        
+    public int agregar(Empleado em){
+        String sql = "insert into empleado(Dni, Nombres, Telefono, Estado, User)value(?,?,?,?,?)";
+        try {
+            con = cn.conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, em.getDni());
+            ps.setString(2, em.getNom());
+            ps.setString(3, em.getTel());
+            ps.setString(4, em.getEstado());
+            ps.setString(5, em.getUser());
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return r;
     }
     
-    public int actualizar(){
-    
+    public  Empleado listarId(int id){
+        Empleado emp=new Empleado();
+        String sql="select * from empleado where IdEmpleado="+id;
+        try {
+            con = cn.conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                emp.setDni(rs.getString(2));
+                emp.setNom(rs.getString(3));
+                emp.setTel(rs.getString(4));
+                emp.setEstado(rs.getString(5));
+                emp.setUser(rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        return emp;
+    }
+    public int actualizar(Empleado em){
+        String sql = "update empleado set Dni=?, Nombres=?, Telefono=?, Estado=?, User=? where IdEmpleado=?";
+        try {
+            con = cn.conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, em.getDni());
+            ps.setString(2, em.getNom());
+            ps.setString(3, em.getTel());
+            ps.setString(4, em.getEstado());
+            ps.setString(5, em.getUser());
+            ps.setInt(6, em.getId());
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return r;
     }
     
     public void delete(int id){
-        
+        String sql = "delete from empleado where IdEmpleado="+id;
+        try {
+            con = cn.conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
     
 }

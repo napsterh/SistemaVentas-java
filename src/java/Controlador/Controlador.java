@@ -5,8 +5,11 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
+import Modelo.EmpleadoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +20,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author ADMIN
  */
 public class Controlador extends HttpServlet {
-
+    
+    Empleado em =  new Empleado();
+    EmpleadoDAO edao= new EmpleadoDAO(); 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,7 +35,8 @@ public class Controlador extends HttpServlet {
         if(menu.equals("Empleado")){
             switch(accion){
                 case "Listar":
-                    
+                    List lista = edao.listar();
+                    request.setAttribute("empleados", lista);
                     break;
                 case "Agregar":
                     

@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -40,6 +41,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th scope="col">N°</th>
                             <th scope="col">DNI</th>
                             <th scope="col">NOMBRES</th>
                             <th scope="col">TELÉFONO</th>
@@ -49,14 +51,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>example</td>
-                        </tr>
+                        <c:forEach var="em" items="${empleados}">
+                            <tr>
+                                <td>${em.getId()}</td>
+                                <td>${em.getDni()}</td>
+                                <td>${em.getNom()}</td>
+                                <td>${em.getTel()}</td>
+                                <td>${em.getEstado()}</td>
+                                <td>${em.getUser()}</td>
+                                <td>
+                                    <a>Editar</a>
+                                    <a>Delete</a>
+                                </td>
+                            </tr>
+                        </c:forEach>>
+                        
                     </tbody>
                 </table>
             </div>
