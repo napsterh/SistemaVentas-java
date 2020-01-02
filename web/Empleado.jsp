@@ -12,7 +12,7 @@
         <div class="d-flex">
             <div class="card col-sm-4">
             <div class="card-body">
-                <form>
+                <form action="Controlador?menu=Empleado" method="POST">
                     <div class="form-group">
                         <label>DNI</label>
                         <input type="text" name="txtDni" class="form-control">

@@ -39,7 +39,18 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("empleados", lista);
                     break;
                 case "Agregar":
-                    
+                    String dni=request.getParameter("txtDni");
+                    String nom=request.getParameter("txtNombre");
+                    String tel=request.getParameter("txtTelefono");
+                    String est=request.getParameter("txtEstado");
+                    String user=request.getParameter("txtUsuario");
+                    em.setDni(dni);
+                    em.setNom(nom);
+                    em.setTel(tel);
+                    em.setEstado(est);
+                    em.setUser(user);
+                    edao.agregar(em);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
                 case "Editar":
                     
